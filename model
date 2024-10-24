@@ -1,0 +1,16 @@
+import pickle
+from sklearn.datasets import load_iris
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+
+# Example data (you can use your own dataset)
+data = load_iris()
+X_train, X_test, y_train, y_test = train_test_split(data.data, data.target, test_size=0.2, random_state=42)
+
+# Train a RandomForest model (replace this with your own model)
+model = RandomForestClassifier()
+model.fit(X_train, y_train)
+
+# Save the model as a pickle file
+with open('model.pkl', 'wb') as file:
+    pickle.dump(model, file)

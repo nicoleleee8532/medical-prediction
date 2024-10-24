@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('background.jpg'); /* Reference image from static folder */
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    margin: 50px auto;
+    width: 400px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Rest of the CSS follows as before */

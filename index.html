@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Prediction Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('{{ url_for('static', filename='background.jpg') }}');
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            margin: 50px auto;
+            width: 400px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin: 10px 0 5px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin: 10px 0;
+        }
+        input[type="submit"] {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        .psa {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+        .psa ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Medical Prediction</h1>
+        <form action="/predict" method="POST">
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="age" required placeholder="Enter age (1-100)">
+            
+            <label for="blood_pressure">Blood Pressure:</label>
+            <input type="text" id="blood_pressure" name="blood_pressure" required placeholder="Enter blood pressure (50-200)">
+            
+            <label for="cholesterol">Cholesterol:</label>
+            <input type="text" id="cholesterol" name="cholesterol" required placeholder="Enter cholesterol (100-300)">
+            
+            <label for="bmi">BMI:</label>
+            <input type="text" id="bmi" name="bmi" required placeholder="Enter BMI (10-50)">
+            
+            <input type="submit" value="Predict">
+        </form>
+
+        <div class="psa">
+            <h3>Normal Ranges</h3>
+            <ul>
+                <li>Age: 1 - 100</li>
+                <li>Blood Pressure: 50 - 200 mmHg</li>
+                <li>Cholesterol: 100 - 300 mg/dL</li>
+                <li>BMI: 10 - 50</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
