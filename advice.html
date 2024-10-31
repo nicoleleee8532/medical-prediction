@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Advice</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400&display=swap" rel="stylesheet"> <!-- Bubbly Font -->
+    <style>
+        body {
+            font-family: 'Baloo 2', cursive; /* Bubbly font */
+            background-image: url('static/background3.gif'); /* Background GIF */
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow */
+        }
+        .advice-box {
+            background-color: rgba(255, 255, 255, 0.8); /* Light background for the advice box */
+            color: #333; /* Text color */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            display: inline-block; /* Center box */
+            margin: 20px auto;
+            width: 80%; /* Responsive width */
+            max-width: 600px; /* Max width */
+        }
+        .chatbox {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            max-width: 600px; /* Max width */
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .messages {
+            overflow-y: auto;
+            max-height: 300px; /* Limit height */
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .message {
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .user-message {
+            background-color: #ff69b4; /* User message color */
+            color: white;
+            align-self: flex-end;
+        }
+        .ai-message {
+            background-color: #4CAF50; /* AI message color */
+            color: white;
+            align-self: flex-start;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 80%;
+        }
+        button {
+            padding: 10px;
+            background-color: #ff69b4; /* Button color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+        button:hover {
+            background-color: #ff1493; /* Darker pink on hover */
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff69b4; /* Pink color */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+        a:hover {
+            background-color: #ff1493; /* Darker pink on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Health Advice Based on Your Assessment</h1>
+    <div class="advice-box">
+        <p>Your risk level: <strong>{{ prediction }}</strong></p>
+        <p>{{ advice }}</p>
+    </div>
+
+    <!-- Chatbox for AI advice -->
+    <div class="chatbox">
+        <h2>AI Chatbot</h2>
+        <div class="messages" id="messages"></div>
+        <input type="text" id="user-input" placeholder="Ask your health question..." />
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <!-- Option to return to the home page -->
+    <a href="/">Back to Home</a>
+
+    <script>
+        function appendMessage(text, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', sender === 'user' ? 'user-message' : 'ai-message');
+            messageDiv.innerText = text;
+            document.getElementById('messages').appendChild(messageDiv);
+            document.getElementById('messages').scrollTop = document.getElementById('messages').scrollHeight; // Scroll to bottom
+        }
+
+        async function sendMessage() {
+            const userInput = document.getElementById('user-input').value;
+            appendMessage(userInput, 'user');
+            document.getElementById('user-input').value = '';
+
+            // Send the user input to the Flask backend
+            const response = await fetch('/ask', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ question: userInput }),
+            });
+
+            const data = await response.json();
+            appendMessage(data.answer, 'ai');
+        }
+    </script>
+</body>
+</html>

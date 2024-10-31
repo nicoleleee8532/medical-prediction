@@ -5,35 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prediction Result</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Quicksand:wght@400;600&display=swap');
+        
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+            font-family: 'Poppins', sans-serif;
+            background: url('/static/background2.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
         }
+        
         .container {
-            margin: 50px auto;
-            width: 400px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
             text-align: center;
         }
+        
         h1 {
-            color: #333;
+            font-family: 'Quicksand', sans-serif;
+            color: #4a4a4a;
+            font-weight: 600;
+            margin-bottom: 10px;
         }
-        a {
-            display: block;
-            margin-top: 20px;
+        
+        .result {
+            font-size: 26px;
+            font-weight: 600;
+            color: #ff6b6b;
+            margin: 20px 0;
+        }
+        
+        .description {
+            font-size: 16px;
+            color: #555;
+            margin: 20px 0;
+        }
+        
+        .action {
+            margin-top: 30px;
+        }
+        
+        .action button {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ff6b6b;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        .action button:hover {
+            background-color: #ff4b4b;
+        }
+        
+        .action a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #007bff;
             text-decoration: none;
-            color: #28a745;
+            font-size: 16px;
+        }
+        
+        .action a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Prediction Result</h1>
-        <p>The model predicts: <strong>{{ prediction }}</strong></p>
-        <a href="/">Make another prediction</a>
+        <p class="result">The predicted medical outcome is: <strong>{{ prediction }}</strong></p>
+        <div class="description">
+            <p>This result indicates that you may need to consult a healthcare professional for further assessment.</p>
+        </div>
+        <div class="action">
+            <!-- Form to send prediction to the advice page -->
+            <form action="/advice" method="POST">
+                <input type="hidden" name="prediction" value="{{ prediction }}">
+                <button type="submit">View Detailed Health Advice</button>
+            </form>
+            <p><a href="/">Make another prediction</a></p>
+        </div>
     </div>
 </body>
 </html>
