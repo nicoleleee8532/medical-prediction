@@ -6,7 +6,7 @@ to predict medical conditions from patient-related information.
 ## 🔗 Project Links
 
 - 📊 [Project Presentation I](https://canva.link/altblqt0a2i8rud)
-- 📊 [Project Presentation II](https://canva.link/altblqt0a2i8rud)
+- 📊 [Project Presentation II](https://canva.link/3rm1al8rkeu2x41)
 
 ## 🩺 Overview
 
@@ -56,7 +56,7 @@ Two presentations were produced during the project to document
 the development process, methodology, and results.
 
 ### Presentation I
-[View Presentation →](YOUR_PUBLIC_VIEW_LINK_1)
+[View Presentation →](https://canva.link/3rm1al8rkeu2x41)
 
 ### Presentation II
 [View Presentation →](https://canva.link/altblqt0a2i8rud)
