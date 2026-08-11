@@ -1,58 +1,85 @@
 # Medical Condition Prediction
 
-A machine learning project for predicting medical conditions from structured health-related data.
+A machine learning project exploring the use of data-driven methods
+to predict medical conditions from patient-related information.
 
-## Overview
+## 🔗 Project Links
 
-This project investigates the use of machine learning for medical condition prediction. The project covers the machine learning workflow from data preparation and exploratory analysis through model development and evaluation.
+- 📊 [Project Presentation I](https://canva.link/altblqt0a2i8rud)
+- 📊 [Project Presentation II](https://canva.link/altblqt0a2i8rud)
 
-## Project Objectives
+## 🩺 Overview
 
-* Explore and preprocess medical-related data
-* Identify useful features for prediction
-* Train machine learning models
-* Evaluate predictive performance
-* Compare model behavior and results
+This project explores the application of machine learning to medical
+condition prediction. It covers the process from data preparation and
+analysis to model development, evaluation, and presentation of results.
 
-## Machine Learning Pipeline
+## 🎯 Objectives
 
-1. Data collection / loading
-2. Data cleaning and preprocessing
-3. Exploratory data analysis
-4. Feature preparation
+- Prepare and analyze medical-related data
+- Explore relationships between patient features and medical conditions
+- Develop machine learning models for prediction
+- Evaluate and compare model performance
+- Present the findings through data visualization and analysis
+
+## ⚙️ Machine Learning Workflow
+
+1. Data preprocessing
+2. Exploratory data analysis
+3. Feature preparation
+4. Model development
 5. Model training
 6. Model evaluation
-7. Result analysis
+7. Results analysis and visualization
 
-## Technologies
+## 🛠️ Technologies
 
-* Python
-* Pandas
-* NumPy
-* [ADD ML LIBRARY]
-* [ADD VISUALIZATION LIBRARY]
-* [ADD MODEL NAMES]
+- Python
+- Pandas
+- NumPy
+- [Machine Learning Library]
+- [Visualization Library]
+- [Models Used]
 
-## Results
+## 👩‍💻 My Contribution
 
-**Best-performing model:** [MODEL]
+- Data preprocessing and preparation
+- Exploratory data analysis
+- Machine learning implementation
+- Model training and evaluation
+- Results interpretation
+- Project presentation and documentation
 
-**Performance:** [ACCURACY / F1 / OTHER METRIC]
+## 📊 Project Presentations
 
-Add a short explanation here describing what the results indicate and why the selected model performed well.
+Two presentations were produced during the project to document
+the development process, methodology, and results.
 
-## My Contribution
+### Presentation I
+[View Presentation →](YOUR_PUBLIC_VIEW_LINK_1)
 
-* Data preprocessing and exploratory analysis
-* Machine learning model implementation
-* Model training and evaluation
-* Performance comparison
-* Result interpretation and visualization
+### Presentation II
+[View Presentation →](https://canva.link/altblqt0a2i8rud)
 
-## What I Learned
+## 📈 Results
 
-This project strengthened my practical understanding of the end-to-end machine learning workflow, particularly data preprocessing, model selection, evaluation, and the application of machine learning to healthcare-related problems.
+**Best Model:** [MODEL NAME]
 
-## Disclaimer
+**Performance:** [ACCURACY / F1 SCORE / OTHER METRIC]
 
-This project was developed for educational and research purposes and is not intended for clinical diagnosis or medical decision-making.
+More detailed experimental results and visualizations are available
+in the project presentations.
+
+## 💡 What I Learned
+
+This project strengthened my understanding of the end-to-end machine
+learning workflow, including data preprocessing, exploratory analysis,
+model development, evaluation, and communicating technical results.
+
+It also gave me experience applying machine learning techniques to a
+healthcare-related prediction problem.
+
+## ⚠️ Disclaimer
+
+This project was developed for educational purposes and is not intended
+for clinical diagnosis or medical decision-making.
