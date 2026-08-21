@@ -61,14 +61,6 @@ the development process, methodology, and results.
 ### Presentation II
 [View Presentation →](https://canva.link/altblqt0a2i8rud)
 
-## 📈 Results
-
-**Best Model:** [MODEL NAME]
-
-**Performance:** [ACCURACY / F1 SCORE / OTHER METRIC]
-
-More detailed experimental results and visualizations are available
-in the project presentations.
 
 ## 💡 What I Learned
 
