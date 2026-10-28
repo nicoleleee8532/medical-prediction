@@ -37,9 +37,10 @@ analysis to model development, evaluation, and presentation of results.
 - Python
 - Pandas
 - NumPy
-- [Machine Learning Library]
-- [Visualization Library]
-- [Models Used]
+- scikit-learn
+- Flask
+- HTML and CSS
+- Pickle for saving trained models
 
 ## 👩‍💻 My Contribution
 
