@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 import pickle
 import random
+import os
 import numpy as np
 import requests
 
@@ -97,7 +98,9 @@ def advice():
     return render_template('advice.html', prediction=prediction, advice=advice_message)
 
 def get_ai_response(user_message):
-    api_key = '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'  # Replace with your actual API key
+    api_key = os.environ.get('OPENAI_API_KEY')  # Replace with your actual API key
+    if not api_key:
+        return "Chatbot is not configured. Set the OPENAI_API_KEY environment variable."
     headers = {
         'Content-Type': 'application/json',
         'Authorization': f'Bearer {api_key}',
